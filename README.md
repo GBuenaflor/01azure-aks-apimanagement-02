@@ -24,11 +24,20 @@
 ----------------------------------------------------------
 ### 1. Create ASP.net Core Web API
 
+```diff
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+```
 
 ----------------------------------------------------------
 ### 2. Create WCF
 
-
+```diff
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+```
 
  ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-02.png)
 
@@ -36,11 +45,21 @@
 ----------------------------------------------------------
 ### 3. Containerize the ASP.net Core and WCF 
 
-
+```diff
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+```
  
  
 ----------------------------------------------------------
 ### 4. Deploy to Azure Kubernetes
+
+```diff
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+- This repo is under construction,I am finalizing the code. Please stay tuned.
+```
 
  ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-03.png)
 

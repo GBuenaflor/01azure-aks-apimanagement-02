@@ -1,6 +1,6 @@
 ----------------------------------------------------------
 # Azure Kubernetes Services (AKS) - Part 08
-# Use Azure API Management with microservices (WCF and Web API) deployed in AKS - Episode 01
+# Use Azure API Management with microservices (WCF and Web API) deployed in AKS - Episode 02
  
  
 #### High Level Architecture Diagram:

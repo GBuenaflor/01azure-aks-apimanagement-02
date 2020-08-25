@@ -1,7 +1,4 @@
 ----------------------------------------------------------
-# Azure Kubernetes Services (AKS) - Part 08
-
-----------------------------------------------------------
 # Use Azure API Management with microservices (WCF and Web API) deployed in AKS - Episode 02
 
 [Episode1](https://github.com/GBuenaflor/01azure-aks-apimanagement/) - Build the infrastructure using Azure Terraform and Generate the Lets Encrypt Certificate 
@@ -11,14 +8,14 @@
 [Episode3](https://github.com/GBuenaflor/01azure-aks-apimanagement-03/) - Configure API Management External and Internal Enpoints
  
 ----------------------------------------------------------
-#### High Level Architecture Diagram for the 3 Episodes:
+### High Level Architecture Diagram for the 3 Episodes:
 
 
 ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement/blob/master/Images/GB-AKS-API02B.png)
 
 ----------------------------------------------------------
 
-#### Episode 2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS (Linux and Windows Node Pool)
+### Episode 2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS (Linux and Windows Node Pool)
 
 
 1. Create ASP.net Core Web API Application

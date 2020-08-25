@@ -28,7 +28,7 @@
 
 
 ----------------------------------------------------------
-### Prerequisite, to have a development environment.
+### Prerequisite, set up for development environment.
 
 - Provision Azure Windows 10 EnterpriseN, Verion 1809 , VM Size: DS2_V3
 
@@ -81,8 +81,6 @@
 
 #### 1.1 Add new Docker file
 ```
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app 
 EXPOSE 80 
@@ -102,7 +100,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "webAPI.dll"]
-
 ```
 
 #### 1.1 Configure the appsettings.json file "ASPNETCORE_ENVIRONMENT"
@@ -179,7 +176,6 @@ ENTRYPOINT ["dotnet", "webAPI.dll"]
         }
 
     }
-
 ```
 
 
@@ -191,7 +187,6 @@ RUN windows\system32\inetsrv\appcmd.exe set app 'Default Web Site/' /enabledProt
 EXPOSE 80 
 WORKDIR /inetpub/wwwroot 
 COPY . /inetpub/wwwroot
-
 ```
 
 
@@ -241,7 +236,6 @@ COPY . /inetpub/wwwroot
     </protocolMapping>    
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
   </system.serviceModel>
-
 ```
 
 
@@ -296,7 +290,6 @@ cd C:\wcf>
 
 docker build -t wcf:dev01 .
 docker run -it --rm -p 8084:80 wcf:dev01
-
 ```
 
 
@@ -316,7 +309,6 @@ docker tag wcf:dev01 gbbuenaflor/wcf01-app:v1
 docker images
 docker push gbbuenaflor/webapi01-app:v1
 docker push gbbuenaflor/wcf01-app:v1
-
 ```
  
  

@@ -13,10 +13,10 @@
 #### Episode 2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS (Linux and Windows Node Pool)
 
 
-1. Create ASP.net Core Web API
-2. Create WCF
-3. Containerize the ASP.net Core and WCF 
-4. Deploy to Azure Kubernetes
+1. Create ASP.net Core Web API Application
+2. Create WCF Service Application 
+3. Containerize the ASP.net Core and WCF Service Application and push images to docker hub
+4. Deploy to Azure Kubernetes Service
 
 
 ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-01.png)
@@ -44,7 +44,7 @@
 
 
 ----------------------------------------------------------
-### 1. Create ASP.net Core Web API
+### 1. Create ASP.net Core Web API Application
 
 #### 1.1 Add new API Controller
 
@@ -143,7 +143,7 @@ ENTRYPOINT ["dotnet", "webAPI.dll"]
 
 
 ----------------------------------------------------------
-### 2. Create WCF Service Application and add Docker Support to the project.
+### 2. Create WCF Service Application 
 
 #### 2.1 Create new Service Contract
 
@@ -262,7 +262,7 @@ COPY . /inetpub/wwwroot
   
 
 ----------------------------------------------------------
-### 3. Containerize the ASP.net Core Web API and WCF application and push images to Docker hub
+### 3. Containerize the ASP.net Core and WCF Service Application and push images to docker hub
 
 
 #### 3.1 Login to your DockerHub account, and view the container(s)
@@ -314,12 +314,14 @@ docker push gbbuenaflor/wcf01-app:v1
 
 ```
  
+ 
+#### 3.5 View the images from docker hub
 
  ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-02.png)
 
  
 ----------------------------------------------------------
-### 4. Deploy to Azure Kubernetes
+### 4. Deploy to Azure Kubernetes Service
 
 #### 4.1 Get K8S Credentials
 ``` 
@@ -353,7 +355,7 @@ kubectl apply --namespace default -f "03wcf-Ext-Int.yaml" --force
 
 [Episode1](https://github.com/GBuenaflor/01azure-aks-apimanagement/) - Build the infrastructure using Azure Terraform and Generate the Lets Encrypt Certificate 
 
-[Episode2](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/) - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS ( Windows and Linux Node Pool)
+> Episode2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS ( Windows and Linux Node Pool)
 
 [Episode3](https://github.com/GBuenaflor/01azure-aks-apimanagement-03/) - Configure API Management External and Internal Enpoints
 

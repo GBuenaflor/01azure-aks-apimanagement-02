@@ -1,0 +1,69 @@
+#-----------------------------------------------------------------
+# Deploy ASP.net Core Web API to Linux NodePool in AKS Cluster  
+#  
+#----------------------------------------------------------------- 
+#-----------------------------------------------------------------
+# Kubernetes - Deployment for Web API
+#-----------------------------------------------------------------
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aks01-webapi
+  namespace: default
+  labels:
+    app: aks01-webapi
+spec:
+  selector:   
+    matchLabels:
+      app: aks01-webapi
+  replicas: 2 # run in 2 Pod
+  minReadySeconds: 45
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: aks01-webapi        
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: aks01-webapi
+        image: gbbuenaflor/webapi01-app:v1
+        imagePullPolicy: Always         
+        ports:
+        - name: container-port
+          containerPort: 80
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "1024Mi"
+          requests:
+            cpu: "100m"
+            memory: "512Mi"         
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+#-----------------------------------------------------------------
+# Kubernetes - Service for Web App
+#-----------------------------------------------------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: #PODS
+    app: aks01-webapi
+  name: aks01-webapi
+  namespace: default
+  
+spec:
+  selector:
+    app: aks01-webapi
+  ports:
+  - protocol: TCP
+    port: 8083
+    targetPort: 80 
+  type: LoadBalancer 

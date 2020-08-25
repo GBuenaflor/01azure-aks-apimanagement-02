@@ -1,0 +1,92 @@
+#-----------------------------------------------------------------
+# Deploy WCF to Windows NodePool in AKS Cluster  
+#  
+#----------------------------------------------------------------- 
+#-----------------------------------------------------------------
+# Kubernetes - Deployment for WCF
+#-----------------------------------------------------------------
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aks01-wcf
+  namespace: default
+  labels:
+    app: aks01-wcf
+spec:
+  selector:   
+    matchLabels:
+      app: aks01-wcf
+  replicas: 2 # run in 2 Pod
+  minReadySeconds: 45
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: aks01-wcf        
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": windows
+      containers:
+      - name: aks01-wcf
+        image: gbbuenaflor/wcf01-app:v1
+        imagePullPolicy: Always         
+        ports:
+        - name: container-port
+          containerPort: 80  
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "1024Mi"
+          requests:
+            cpu: "100m"
+            memory: "512Mi"          
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+#-----------------------------------------------------------------
+# Kubernetes - Service for WCF -External
+#-----------------------------------------------------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: #PODS
+    app: aks01-wcf
+  name: aks01-wcf-ext
+  namespace: default
+  
+spec:
+  selector:
+    app: aks01-wcf
+  ports:
+  - protocol: TCP
+    port: 8084
+    targetPort: 80 
+  type: LoadBalancer  
+  
+#-----------------------------------------------------------------
+# Kubernetes - Service for WCF -Internal
+#-----------------------------------------------------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: #PODS
+    app: aks01-wcf
+  name: aks01-wcf-int
+  namespace: default
+  
+spec:
+  selector:
+    app: aks01-wcf
+  ports:
+  - protocol: TCP
+    port: 8084
+    targetPort: 80
+    nodePort: 30020 
+  type: NodePort 
+

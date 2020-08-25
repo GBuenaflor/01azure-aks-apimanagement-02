@@ -10,7 +10,7 @@
 
 ----------------------------------------------------------
 
-#### Episode 2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS ( Windows and Linux Node Pool)
+#### Episode 2 - Create and contenerize ASP.Net Core Web API and WCF app then deploy to AKS (Linux and Windows Node Pool)
 
 
 1. Create ASP.net Core Web API
@@ -246,9 +246,7 @@ COPY . /inetpub/wwwroot
 <system.webServer>
     <modules runAllManagedModulesForAllRequests="true"/>
     <directoryBrowse enabled="true"/>
-  </system.webServer>
-
-
+</system.webServer>
 ```
 
 
@@ -261,10 +259,7 @@ COPY . /inetpub/wwwroot
  ...
  
 ```
- 
-
- ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-02.png)
-
+  
 
 ----------------------------------------------------------
 ### 3. Containerize the ASP.net Core Web API and WCF application and push images to Docker hub
@@ -320,7 +315,7 @@ docker push gbbuenaflor/wcf01-app:v1
 ```
  
 
- ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-03.png)
+ ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-02.png)
 
  
 ----------------------------------------------------------
@@ -345,9 +340,9 @@ kubectl apply --namespace default -f "03wcf-Ext-Int.yaml" --force
 ```
 
 
-#### 4.4 View the deployed files 
+#### 4.4 View the ASP.net Core WebAPI and WCF deployed in AKS (using Windows and Linux Node Pool)
 
- ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-04.png)
+ ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-03.png)
 
 
 ------------------------------------------------------------------------------

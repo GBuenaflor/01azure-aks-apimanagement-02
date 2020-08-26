@@ -24,7 +24,7 @@
 4. Deploy to Azure Kubernetes Service
 
 
-![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-01.png)
+![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-01A.png)
 
 
 ----------------------------------------------------------

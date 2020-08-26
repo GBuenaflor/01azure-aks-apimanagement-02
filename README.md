@@ -28,7 +28,7 @@
 
 
 ----------------------------------------------------------
-### Prerequisite, set up for development environment.
+### Prerequisite, set up for development/work-station machine.
 
 - Provision Azure Windows 10 EnterpriseN, Verion 1809 , VM Size: DS2_V3
 

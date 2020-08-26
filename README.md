@@ -353,6 +353,11 @@ kubectl apply --namespace default -f "03wcf-Ext-Int.yaml" --force
  ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-05.png)
 
 
+
+
+
+#### Next Episode we will publish both API to Azure API Management that runs under the App Gateway.
+
 ------------------------------------------------------------------------------
  
   

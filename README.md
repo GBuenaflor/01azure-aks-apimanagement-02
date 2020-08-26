@@ -338,9 +338,19 @@ kubectl apply --namespace default -f "03wcf-Ext-Int.yaml" --force
 ```
 
 
-#### 4.4 View the ASP.net Core WebAPI and WCF deployed in AKS (using Windows and Linux Node Pool)
+#### 4.4 View the ASP.net Core WebAPI and WCF container deployed in AKS (using Windows and Linux Node Pool)
 
  ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-03.png)
+
+
+#### 4.5 View the WCF WebService running from AKS Windows Node Pool
+
+ ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-04.png)
+
+
+#### 4.6 View the ASP.net Core Web API running from in AKS Linux Node Pool
+
+ ![Image description](https://github.com/GBuenaflor/01azure-aks-apimanagement-02/blob/master/Images/GB-AKS-API-E2-05.png)
 
 
 ------------------------------------------------------------------------------
